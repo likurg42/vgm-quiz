@@ -1,0 +1,24 @@
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacer-400);
+  padding-bottom: var(--spacer-400);
+}
+
+.footer__item {
+  display: flex;
+  margin: 0;
+  align-items: center;
+  gap: var(--spacer-400);
+  color: var(--clr-accent);
+  font-size: var(--fs-400);
+  text-decoration: none;
+
+  &--link {
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

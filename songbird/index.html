@@ -5,7 +5,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>VGM Quiz</title>
 </head>
-<body>
-<script type="module" src="/main.js"></script>
+<body class="full-height">
+<header class="header">
+  <div class="header__content container">
+    <p class="header__logo title title--sm">
+      VGM Quiz
+    </p>
+    <div class="header__score score">score: 9999</div>
+    <nav class="header__nav">
+      <ul class="nav">
+        <li class="nav__item">Home</li>
+        <li class="nav__item nav__item--game">Game</li>
+        <li class="nav__item nav__item--result nav__item--is-disabled">
+          Result
+        </li>
+        <li class="nav__item nav__item--jukebox nav__item--is-disabled">
+          Jukebox
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main class="main">
+  <section class="main__section welcome container">
+    <h1 class="welcome__title title">VGM QUIZ</h1>
+    <p class="welcome__desc">It's a video game music quiz!</p>
+    <p class="welcome__desc">
+      It's dangerous to go alone, take this
+      <span class="welcome__sword sword"></span>
+    </p>
+    <button class="button button--primary" type="button">Start</button>
+  </section>
+</main>
+<footer class="footer container">
+  <a class="footer__item footer__item--link" href="https://rs.school/js/"
+     target="_blank">RS School</a>
+  <a href="https://github.com/likurg42" class="footer__item footer__item--link"
+     target="_blank">My Github</a>
+  <p class="footer__item">2022</p>
+</footer>
+<script type="module" src="./main.js"></script>
 </body>
 </html>

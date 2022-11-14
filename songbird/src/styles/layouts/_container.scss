@@ -1,0 +1,6 @@
+.container {
+  --max-width: 1120px;
+
+  padding-left: max(var(--spacer-400), (50% - var(--max-width) / 2));
+  padding-right: max(var(--spacer-400), (50% - var(--max-width) / 2));
+}

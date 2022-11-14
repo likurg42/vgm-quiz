@@ -1,0 +1,22 @@
+.nav {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: row wrap;
+  gap: var(--spacer-400);
+  list-style: none;
+}
+
+.nav__item {
+  font-family: var(--ff-title);
+  font-size: var(--fs-600);
+  text-transform: uppercase;
+
+  &--is-disabled {
+    color: var(--clr-disabled);
+  }
+
+  &--game {
+    color: var(--clr-primary);
+  }
+}

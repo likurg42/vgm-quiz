@@ -1,0 +1,42 @@
+:root {
+  --spacer-300: 0.5rem;
+  --spacer-400: 1rem;
+  --spacer-500: 1.5rem;
+
+  --ff-title: "Upheaval", sans-serif;
+
+  --fs-400: 1rem;
+  --fs-500: 1.5rem;
+  --fs-600: 2rem;
+  --fs-700: 4rem;
+  --fs-800: 8rem;
+  --fs-900: 10rem;
+
+  --fs-title: var(--fs-700);
+  --ff-text: "Undertale Battle", sans-serif;
+  --fs-text: 1rem;
+
+  --clr-default: white;
+  --clr-default-hover: #e7e7e7;
+  --clr-default-shadow: #adafbc;
+
+  --clr-border: #d3d3d3;
+
+  --clr-accent: #212529;
+  //--clr-accent: black;
+
+  --clr-primary: #209cee;
+  --clr-primary-hover: #108de0;
+  --clr-primary-shadow: #006bb3;
+
+  --clr-success: #76c442;
+  --clr-success-hover: #76c442;
+  --clr-success-shadow: #4aa52e;
+
+  --clr-error: #ce372b;
+  --clr-error-hover: #f2c409;
+  --clr-error-shadow: #8c2022;
+
+  --clr-disabled: #e5e5e5;
+  --clr-disabled-shadow: #adafbc;
+}

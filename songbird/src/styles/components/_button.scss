@@ -1,0 +1,46 @@
+.button {
+  --border-width: 4px;
+  --border-width-neg: calc(var(--border-width) * -1);
+  --border-width-shadow: var(--border-width-neg);
+  --button-clr-shadow: var(--clr-default-shadow);
+
+  position: relative;
+  margin: var(--border-width);
+  padding: var(--spacer-300) var(--spacer-400);
+  text-align: center;
+  color: var(--button-color, var(--clr-accent));
+  background-color: var(--button-clr-bg, var(--clr-default));
+  border-style: solid;
+  border-width: var(--border-width);
+  border-image: url('/src/icons/border.svg') 2 / 10px / 10px stretch;
+
+  // Shadow
+  &::after {
+    content: '';
+    position: absolute;
+    top: var(--border-width-neg);
+    right: var(--border-width-neg);
+    bottom: var(--border-width-neg);
+    left: var(--border-width-neg);
+    box-shadow: inset var(--border-width-shadow) var(--border-width-shadow) var(--button-clr-shadow);
+  }
+
+  &:hover {
+    --button-clr-bg: var(--clr-default-hover);
+    --border-width-shadow: calc(var(--border-width-neg) - 2px);
+  }
+
+  &:active {
+    --border-width-shadow: calc(var(--border-width) + 2px);
+  }
+
+  &--primary {
+    --button-color: white;
+    --button-clr-bg: var(--clr-primary);
+    --button-clr-shadow: var(--clr-primary-shadow);
+
+    &:hover {
+      --button-clr-bg: var(--clr-primary-hover);
+    }
+  }
+}

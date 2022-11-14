@@ -1,0 +1,11 @@
+.title {
+  margin: 0;
+  font-family: var(--ff-title);
+  font-size: var(--title-fs, var(--fs-title));
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.title--sm {
+  --title-fs: var(--fs-600);
+}
