@@ -1,0 +1,49 @@
+.game {
+  display: none; // display: grid;
+  padding-top: var(--spacer-400);
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "score score"
+    "categories categories"
+    "player player"
+    "answers answers"
+    "description description"
+    "button button";
+  gap: var(--spacer-500);
+  align-items: start;
+
+  @media (min-width: 700px) {
+    grid-template-areas:
+    "score score"
+    "categories categories"
+    "player player"
+    "answers description"
+    "button button";
+  }
+}
+
+.game__score {
+  grid-area: score;
+  justify-self: end;
+}
+
+.game__categories {
+  grid-area: categories;
+}
+
+.game__player {
+  grid-area: player;
+}
+
+.game__answers {
+  grid-area: answers;
+}
+
+.game__description {
+  grid-area: description;
+}
+
+.game__continue-button {
+  grid-area: button;
+}

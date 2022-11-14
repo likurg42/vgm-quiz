@@ -1,5 +1,6 @@
 .welcome {
   display: flex;
+  height: 80vh;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -11,7 +12,8 @@
   margin: 0;
   flex-direction: column;
   align-items: center;
-  gap: var(--spacer-500)
+  gap: var(--spacer-500);
+  text-align: center;
 }
 
 .welcome__sword {

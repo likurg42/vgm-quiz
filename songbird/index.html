@@ -26,16 +26,58 @@
     </nav>
   </div>
 </header>
-<main class="main">
-  <section class="main__section welcome container">
+<main>
+  <section class="welcome container">
     <h1 class="welcome__title title">VGM QUIZ</h1>
     <p class="welcome__desc">It's a video game music quiz!</p>
     <p class="welcome__desc">
       It's dangerous to go alone, take this
       <span class="welcome__sword sword"></span>
     </p>
-    <button class="button button--primary" type="button">Start</button>
+    <button class="button button--is-primary" type="button">Start</button>
   </section>
+  <section class="game container">
+    <div class="game__score score">Score:
+      <span class="score__value">999</span></div>
+    <ul class="game__categories categories">
+      <li class="categories__item">Practice</li>
+      <li class="categories__item">???</li>
+      <li class="categories__item">???</li>
+      <li class="categories__item">???</li>
+      <li class="categories__item">???</li>
+      <li class="categories__item">???</li>
+    </ul>
+    <div class="game__player song">
+      <img src="/src/icons/question.png" alt="Cover" class="song__cover">
+      <h3 class="song__title">???</h3>
+      <audio class="song__player"
+             controls
+             src="https://vgmsite.com/soundtracks/super-mario-bros/jlgsgtpeof/01%20Running%20About.mp3"></audio>
+
+    </div>
+    <ul class="game__answers answers">
+      <li class="answers__item answers__item--is-correct">1</li>
+      <li class="answers__item answers__item--is-wrong">2</li>
+      <li class="answers__item">3</li>
+      <li class="answers__item">4</li>
+      <li class="answers__item">5</li>
+      <li class="answers__item">6</li>
+    </ul>
+    <div class="game__description song song--full">
+      <img src="/src/icons/question.png" alt="Cover" class="song__cover">
+      <h3 class="song__title">???</h3>
+      <audio class="song__player"
+             controls
+             src="https://vgmsite.com/soundtracks/super-mario-bros/jlgsgtpeof/01%20Running%20About.mp3"></audio>
+      <p class="song__description">Choose answer</p>
+    </div>
+    <button class="game__continue-button button button--is-active"
+            disabled>Next
+      Level
+    </button>
+  </section>
+
+  <section class="result"></section>
 </main>
 <footer class="footer container">
   <a class="footer__item footer__item--link" href="https://rs.school/js/"

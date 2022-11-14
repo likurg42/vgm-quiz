@@ -1,0 +1,19 @@
+.categories {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  list-style: none;
+  border: 5px solid var(--clr-accent);
+}
+
+.categories__item {
+  padding: var(--spacer-400);
+  flex: 1 0 15%;
+  text-align: center;
+
+  & + & {
+    //border-left: 5px solid var(--clr-accent);
+  }
+}

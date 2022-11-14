@@ -1,5 +1,6 @@
 .full-height {
   display: grid;
-  grid-template-rows: auto 1fr auto;
   min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+  gap: var(--spacer-500)
 }

@@ -34,13 +34,29 @@
     --border-width-shadow: calc(var(--border-width) + 2px);
   }
 
-  &--primary {
+  &--is-primary {
     --button-color: white;
     --button-clr-bg: var(--clr-primary);
     --button-clr-shadow: var(--clr-primary-shadow);
 
     &:hover {
       --button-clr-bg: var(--clr-primary-hover);
+    }
+  }
+
+  &--is-disabled {
+    --button-color: var(--clr-disabled-shadow);
+    --button-clr-bg: var(--clr-disabled);
+    --button-clr-shadow: var(--clr-disabled-shadow);
+  }
+
+  &--is-active {
+    --button-color: white;
+    --button-clr-bg: var(--clr-success);
+    --button-clr-shadow: var(--clr-success-shadow);
+
+    &:hover {
+      --button-clr-bg: var(--clr-success-hover);
     }
   }
 }

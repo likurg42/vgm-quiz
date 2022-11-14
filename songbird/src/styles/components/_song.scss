@@ -1,0 +1,66 @@
+.song {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  grid-template-rows: auto;
+  gap: var(--spacer-400);
+  grid-template-areas: "cover cover" "title title" "player player";
+  border: 5px solid var(--clr-accent);
+  padding: var(--spacer-400);
+
+  @media (min-width: 450px) {
+    grid-template-areas: "cover title" "cover player";
+  }
+
+  &--full {
+    justify-items: center;
+    grid-template-areas: "cover cover" "title title" "player player" "description description";
+
+    @media screen and (min-width: 940px) {
+      justify-items: start;
+      grid-template-areas:
+    "cover title"
+    "cover player"
+    "description description";
+    }
+  }
+}
+
+.song__cover {
+  display: flex;
+  width: 100px;
+  height: 100px;
+  grid-area: cover;
+  object-fit: contain;
+  border: 2px solid transparent;
+
+  &--with-border {
+    border-image: url('/src/icons/border.svg') 2 / 10px / 10px stretch;
+  }
+}
+
+.song__title {
+  margin: 0;
+  font-family: var(--ff-title);
+  font-size: var(--fs-600);
+  text-transform: uppercase;
+  font-weight: normal;
+  grid-area: title;
+  border-bottom: 2px solid var(--clr-border)
+
+}
+
+.song__player {
+  border: 2px solid var(--clr-accent);
+  grid-area: player;
+  width: 100%;
+
+  //no-inspection
+  &::-webkit-media-controls-panel {
+    background-color: white;
+  }
+}
+
+.song__description {
+  margin: 0;
+  grid-area: description;
+}

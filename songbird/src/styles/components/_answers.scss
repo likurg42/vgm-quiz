@@ -1,0 +1,41 @@
+.answers {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  flex-direction: column;
+  border: 5px solid var(--clr-accent);
+  list-style: none;
+}
+
+.answers__item {
+  padding: var(--spacer-400);
+  color: var(--answers-item-color, initial);
+  background-color: var(--answers-item-bg, var(--clr-default));
+
+  & + & {
+    border-top: 2px solid var(--clr-accent);
+  }
+
+  &:hover {
+    --answers-item-bg: var(--clr-default-hover)
+  }
+
+  &--is-correct {
+    --answers-item-color: var(--clr-default);
+
+    --answers-item-bg: var(--clr-success);
+
+    &:hover {
+      --answers-item-bg: var(--clr-success-hover);
+    }
+  }
+
+  &--is-wrong {
+    --answers-item-color: var(--clr-default);
+    --answers-item-bg: var(--clr-error);
+
+    &:hover {
+      --answers-item-bg: var(--clr-error-shadow);
+    }
+  }
+}
