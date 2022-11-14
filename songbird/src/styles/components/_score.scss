@@ -1,9 +1,18 @@
 .score {
   font-size: var(--fs-600);
   text-transform: uppercase;
+
+  &--is-final {
+    font-family: var(--ff-title);
+    font-size: var(--fs-700);
+
+    & .score__value {
+      display: block;
+      text-align: center;
+    }
+  }
 }
 
 .score__value {
   text-transform: uppercase;
-
 }
