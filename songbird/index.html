@@ -1,111 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>VGM Quiz</title>
-</head>
-<body class="full-height">
-<header class="header">
-    <div class="header__content container">
+  </head>
+  <body class="full-height">
+    <header class="header">
+      <div class="header__content container">
         <p class="header__logo title title--sm">
-            VGM Quiz
+          VGM Quiz
         </p>
         <div class="header__score score">score: 9999</div>
         <nav class="header__nav">
-            <ul class="nav">
-                <li class="nav__item">Home</li>
-                <li class="nav__item nav__item--game">Game</li>
-                <li class="nav__item nav__item--result nav__item--is-disabled">
-                    Result
-                </li>
-                <li class="nav__item nav__item--jukebox nav__item--is-disabled">
-                    Jukebox
-                </li>
-            </ul>
+          <ul class="nav">
+            <li class="nav__item">Home</li>
+            <li class="nav__item nav__item--game">Game</li>
+            <li class="nav__item nav__item--result nav__item--is-disabled">
+              Result
+            </li>
+            <li class="nav__item nav__item--jukebox nav__item--is-disabled">
+              Jukebox
+            </li>
+          </ul>
         </nav>
-    </div>
-</header>
-<main>
-    <section class="welcome welcome--show container">
+      </div>
+    </header>
+    <main>
+      <section class="welcome welcome--show container">
         <h1 class="welcome__title title">VGM QUIZ</h1>
         <p class="welcome__desc">It's a video game music quiz!</p>
         <p class="welcome__desc">
-            It's dangerous to go alone, take this
-            <span class="welcome__sword sword"></span>
+          It's dangerous to go alone, take this
+          <span class="welcome__sword sword"></span>
         </p>
         <button class="welcome__button button button--is-primary" type="button">
-            Start
+          Start
         </button>
-    </section>
-    <section class="game container">
-        <div class="game__score score">Score:
-            <span class="score__value">0</span>
-        </div>
+      </section>
+      <section class="game container">
+        <p class="game__score score">Score:
+          <span class="score__value">0</span>
+        </p>
         <ul class="game__categories categories">
-            <li class="categories__item categories__item--is-current">Practice
-            </li>
-            <li class="categories__item">???</li>
-            <li class="categories__item">???</li>
-            <li class="categories__item">???</li>
-            <li class="categories__item">???</li>
-            <li class="categories__item">???</li>
+          <li class="categories__item categories__item--is-current">Practice
+          </li>
+          <li class="categories__item">???</li>
+          <li class="categories__item">???</li>
+          <li class="categories__item">???</li>
+          <li class="categories__item">???</li>
+          <li class="categories__item">???</li>
         </ul>
         <div class="game__song-question song">
-            <img src="/src/icons/question.png" alt="Cover" class="song__cover">
-            <h3 class="song__title">???</h3>
-            <audio class="song__player"
-                   controls
-                   src="https://vgmsite.com/soundtracks/super-mario-bros/jlgsgtpeof/01%20Running%20About.mp3"></audio>
+          <img src="/src/icons/question.png" alt="Cover" class="song__cover">
+          <h3 class="song__title">???</h3>
+          <audio class="song__player"
+                 controls
+                 src=""></audio>
         </div>
         <ul class="game__answers answers">
-            <li class="answers__item" data-answer="1">1</li>
-            <li class="answers__item" data-answer="2">2</li>
-            <li class="answers__item" data-answer="3">3</li>
-            <li class="answers__item" data-answer="4">4</li>
-            <li class="answers__item" data-answer="5">5</li>
-            <li class="answers__item" data-answer="6">6</li>
+          <li class="answers__item" data-answer="1">1</li>
+          <li class="answers__item" data-answer="2">2</li>
+          <li class="answers__item" data-answer="3">3</li>
+          <li class="answers__item" data-answer="4">4</li>
+          <li class="answers__item" data-answer="5">5</li>
+          <li class="answers__item" data-answer="6">6</li>
         </ul>
         <div class="game__song-description song song--full">
-            <img src="/src/icons/question.png" alt="Cover" class="song__cover">
-            <h3 class="song__title">???</h3>
-            <audio class="song__player"
-                   controls
-                   src="https://vgmsite.com/soundtracks/super-mario-bros/jlgsgtpeof/01%20Running%20About.mp3"></audio>
-            <p class="song__description song__description--show">
-                Choose answer
-            </p>
+          <img src="/src/icons/question.png" alt="Cover" class="song__cover">
+          <h3 class="song__title">???</h3>
+          <audio class="song__player"
+                 controls
+                 src="https://vgmsite.com/soundtracks/super-mario-bros/jlgsgtpeof/01%20Running%20About.mp3"></audio>
+          <p class="song__description song__description--show">
+            Choose answer
+          </p>
         </div>
         <button class="game__continue-button button"
-                disabled>Next
-            Level
+                disabled>
+          NextLevel
         </button>
-    </section>
-
-    <section class="result container">
+      </section>
+      <section class="result container">
         <div class="result__score score score--is-final">
-            Your result is
-            <span class="score__value">999</span>
+          Your result is
+          <span class="score__value">999</span>
         </div>
         <div class="result__buttons-wrapper">
-            <button class="result__new-game button button--is-primary">New game
-            </button>
-            <button class="result__home button">Home</button>
+          <button class="result__new-game button button--is-primary">
+            New game
+          </button>
+          <button class="result__home button">Home</button>
         </div>
-    </section>
-</main>
-<footer class="footer container">
-    <a class="footer__item footer__item--link" href="https://rs.school/js/"
-       target="_blank">
+      </section>
+    </main>
+    <footer class="footer container">
+      <a class="footer__item footer__item--link" href="https://rs.school/js/"
+         target="_blank">
         RS School
-    </a>
-    <a href="https://github.com/likurg42"
-       class="footer__item footer__item--link"
-       target="_blank">
+      </a>
+      <a href="https://github.com/likurg42"
+         class="footer__item footer__item--link"
+         target="_blank">
         My Github
-    </a>
-    <p class="footer__item">2022</p>
-</footer>
-<script type="module" src="./main.js"></script>
-</body>
+      </a>
+      <p class="footer__item">2022</p>
+    </footer>
+    <script type="module" src="./main.js"></script>
+  </body>
 </html>
