@@ -4,7 +4,7 @@
   padding-bottom: var(--spacer-400);
   height: 100%;
   grid-template-columns: 1fr;
-  grid-template-rows: auto;
+  grid-auto-rows: auto;
   grid-template-areas:
     "score"
     "categories"
@@ -52,8 +52,11 @@
   grid-area: answers;
 }
 
-.game__description {
+.game__song-description {
+  height: 375.2px;
+  align-content: start;
   background-color: var(--clr-default);
+  overflow-y: scroll;
 
   grid-area: description;
 }
