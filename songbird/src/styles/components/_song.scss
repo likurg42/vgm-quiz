@@ -18,9 +18,9 @@
     @media screen and (min-width: 940px) {
       justify-items: start;
       grid-template-areas:
-    "cover title"
-    "cover player"
-    "description description";
+        "cover title"
+        "cover player"
+        "description description";
     }
   }
 }
@@ -50,17 +50,24 @@
 }
 
 .song__player {
-  border: 2px solid var(--clr-accent);
+  border: 5px solid var(--clr-accent);
   grid-area: player;
   width: 100%;
 
   //no-inspection
   &::-webkit-media-controls-panel {
     background-color: white;
+    font: inherit;
+
   }
 }
 
 .song__description {
+  display: none;
   margin: 0;
   grid-area: description;
+
+  &--show {
+    display: block;
+  }
 }

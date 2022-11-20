@@ -1,9 +1,14 @@
 .result {
-  display: none; // display: grid;
+  display: none;
   min-height: 80vh;
   justify-items: center;
   gap: var(--spacer-500);
   text-align: center;
+  align-items: center;
+
+  &--show {
+    display: grid;
+  }
 }
 
 .result__score {

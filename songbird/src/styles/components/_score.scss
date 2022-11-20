@@ -1,9 +1,9 @@
 .score {
   font-size: var(--fs-600);
+  font-family: var(--ff-title);
   text-transform: uppercase;
 
   &--is-final {
-    font-family: var(--ff-title);
     font-size: var(--fs-700);
 
     & .score__value {

@@ -1,25 +1,32 @@
 .game {
   display: none; // display: grid;
   padding-top: var(--spacer-400);
-  grid-template-columns: 1fr 1fr;
+  padding-bottom: var(--spacer-400);
+  height: 100%;
+  grid-template-columns: 1fr;
   grid-template-rows: auto;
   grid-template-areas:
-    "score score"
-    "categories categories"
-    "player player"
-    "answers answers"
-    "description description"
-    "button button";
+    "score"
+    "categories"
+    "player"
+    "answers"
+    "description"
+    "button";
   gap: var(--spacer-500);
   align-items: start;
 
   @media (min-width: 700px) {
+    grid-template-columns: 1fr 1fr;
     grid-template-areas:
     "score score"
     "categories categories"
     "player player"
     "answers description"
     "button button";
+  }
+
+  &--show {
+    display: grid;
   }
 }
 
@@ -29,18 +36,25 @@
 }
 
 .game__categories {
+  background-color: var(--clr-default);
   grid-area: categories;
 }
 
-.game__player {
+.game__song-question {
+  background-color: var(--clr-default);
+
   grid-area: player;
 }
 
 .game__answers {
+  background-color: var(--clr-default);
+
   grid-area: answers;
 }
 
 .game__description {
+  background-color: var(--clr-default);
+
   grid-area: description;
 }
 
