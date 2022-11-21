@@ -4,6 +4,8 @@ import makeButton from './button';
 import data from '../data/data';
 import makeScore from './score';
 import makeSong from './song';
+import correctSoundSrc from '../../audio/correct.wav';
+import wrongSoundSrc from '../../audio/wrong.wav';
 
 const makeGame = (query = '.game') => {
   const root = document.querySelector(query);
@@ -13,6 +15,8 @@ const makeGame = (query = '.game') => {
   const score = makeScore('.game__score');
   const songQuestion = makeSong('.game__song-question', root);
   const songDescription = makeSong('.game__song-description', root);
+  const correctSound = new Audio(correctSoundSrc);
+  const wrongSound = new Audio(wrongSoundSrc);
 
   const maxRound = data.length;
   const maxPoints = data.length * 50;
@@ -21,6 +25,9 @@ const makeGame = (query = '.game') => {
   let correctAnswer = 0;
   let isRoundOver = false;
   let isGameOver = false;
+
+  correctSound.volume = 0.2;
+  wrongSound.volume = 0.2;
 
   const dataCategories = [
     'Practice',
@@ -106,6 +113,7 @@ const makeGame = (query = '.game') => {
       button.toggleActive();
       songQuestion.setData(getQuestionData(answerNumber));
       songDescription.setData(getQuestionData(answerNumber));
+      correctSound.play();
 
       isRoundOver = true;
     }
@@ -114,6 +122,7 @@ const makeGame = (query = '.game') => {
       answers.checkAnswer(answerElement);
       points -= 10;
       answers.toggleWrongAnswer(answerElement);
+      wrongSound.play();
     }
 
     if (round === maxRound) {
