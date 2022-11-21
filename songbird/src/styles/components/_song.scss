@@ -30,11 +30,11 @@
   width: 100px;
   height: 100px;
   grid-area: cover;
-  object-fit: contain;
-  border: 2px solid transparent;
+  object-fit: cover;
+  border: 1px solid transparent;
 
   &--with-border {
-    border-image: url('/src/icons/border.svg') 2 / 10px / 10px stretch;
+    border-image: url('/src/icons/border.svg') 2 / 10px / 9px stretch;
   }
 }
 
