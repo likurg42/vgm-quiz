@@ -30,10 +30,14 @@
   width: 100px;
   height: 100px;
   grid-area: cover;
-  object-fit: cover;
   border: 1px solid transparent;
 
+  &--question {
+    object-fit: contain;
+  }
+
   &--with-border {
+    object-fit: cover;
     border-image: url('/src/icons/border.svg') 2 / 10px / 9px stretch;
   }
 }

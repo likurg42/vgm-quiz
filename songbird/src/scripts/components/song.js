@@ -23,12 +23,15 @@ const makeSong = (query = '.song', parentElement = document) => {
     player.src = audioSrc;
     cover.src = coverSrc;
     cover.classList.add('song__cover--with-border');
+    cover.classList.remove('song__cover--question');
+
     if (description) description.textContent = descriptionText;
   };
 
   const reset = (audioSrc) => {
     title.textContent = '???';
     cover.src = questionMark;
+    cover.classList.add('song__cover--question');
     cover.classList.remove('song__cover--with-border');
     player.src = audioSrc;
     if (description) description.textContent = 'Choose answer';
