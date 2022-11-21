@@ -12,9 +12,5 @@
 .header__logo {
   padding: var(--spacer-400) 0;
   text-transform: uppercase;
-}
-
-.header__score {
-  padding: var(--spacer-400) 0;
-  display: none;
+  cursor: pointer;
 }

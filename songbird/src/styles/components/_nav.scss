@@ -11,12 +11,29 @@
   font-family: var(--ff-title);
   font-size: var(--fs-600);
   text-transform: uppercase;
+  cursor: pointer;
 
-  &--is-disabled {
-    color: var(--clr-disabled);
+  &:hover {
+    opacity: 0.75;
   }
 
   &--game {
     color: var(--clr-primary);
+  }
+
+  &--result {
+    color: var(--clr-success);
+  }
+
+  &--jukebox {
+    color: var(--clr-jukebox);
+  }
+
+  &--is-disabled {
+    color: var(--clr-disabled);
+
+    &:hover {
+      opacity: 1;
+    }
   }
 }

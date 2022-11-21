@@ -1,4 +1,6 @@
 .game {
+  --page-display: grid;
+
   display: none; // display: grid;
   padding-top: var(--spacer-400);
   padding-bottom: var(--spacer-400);
@@ -23,10 +25,6 @@
     "player player"
     "answers description"
     "button button";
-  }
-
-  &--show {
-    display: grid;
   }
 }
 

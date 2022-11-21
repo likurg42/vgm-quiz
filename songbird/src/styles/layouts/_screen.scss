@@ -1,0 +1,7 @@
+.screen {
+  display: none;
+
+  &--current {
+    display: var(--page-display);
+  }
+}

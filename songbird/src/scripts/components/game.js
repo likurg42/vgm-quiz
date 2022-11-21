@@ -2,7 +2,6 @@ import makeCategories from './categories';
 import makeAnswers from './answers';
 import makeButton from './button';
 import data from '../data/data';
-import makeResult from './result';
 import makeScore from './score';
 import makeSong from './song';
 
@@ -11,12 +10,12 @@ const makeGame = (query = '.game') => {
   const categories = makeCategories('.game__categories.categories', root);
   const answers = makeAnswers('.game__answers.answers', root);
   const button = makeButton('.game__continue-button', root);
-  const result = makeResult('.result');
   const score = makeScore('.game__score');
   const songQuestion = makeSong('.game__song-question', root);
   const songDescription = makeSong('.game__song-description', root);
 
   const maxRound = data.length;
+  const maxPoints = data.length * 50;
   let points = 0;
   let round = 1;
   let correctAnswer = 0;
@@ -33,6 +32,10 @@ const makeGame = (query = '.game') => {
   ];
 
   categories.setCategories(dataCategories);
+
+  const getPoints = () => points;
+
+  const checkIsWon = () => points === maxPoints;
 
   const getQuestionData = (answer) => {
     const {
@@ -51,6 +54,7 @@ const makeGame = (query = '.game') => {
 
   const setupAnswers = () => {
     correctAnswer = Math.floor(Math.random() * maxRound + 1);
+    console.log(correctAnswer);
     answers.cleanAnswers();
 
     const currentAnswers = data[round - 1].reduce((acc, item) => {
@@ -67,6 +71,7 @@ const makeGame = (query = '.game') => {
     const { audioSrc } = getQuestionData(correctAnswer);
     songQuestion.reset(audioSrc);
   };
+
   const setupDescription = () => {
     songDescription.reset('');
   };
@@ -80,19 +85,23 @@ const makeGame = (query = '.game') => {
     setupDescription();
   };
 
-  const checkAnswer = (answer, answerElement) => {
-    if (answer === correctAnswer && !isRoundOver) {
+  const verifyAnswer = (answerNumber, answerElement) => {
+    const isChecked = answers.checkIsChecked(answerElement);
+    console.log(isChecked);
+    if (answerNumber === correctAnswer && !isRoundOver && !isChecked) {
+      answers.checkAnswer(answerElement);
       points += 50;
       score.setValue(points);
       answers.toggleCorrectAnswer(answerElement);
       button.toggleActive();
-      songQuestion.setData(getQuestionData(answer));
-      songDescription.setData(getQuestionData(answer));
+      songQuestion.setData(getQuestionData(answerNumber));
+      songDescription.setData(getQuestionData(answerNumber));
 
       isRoundOver = true;
     }
 
-    if (answer !== correctAnswer && !isRoundOver) {
+    if (answerNumber !== correctAnswer && !isRoundOver && !isChecked) {
+      answers.checkAnswer(answerElement);
       points -= 10;
       answers.toggleWrongAnswer(answerElement);
     }
@@ -102,42 +111,23 @@ const makeGame = (query = '.game') => {
       button.changeText('Show results');
     }
 
-    songDescription.setData(getQuestionData(answer));
+    songDescription.setData(getQuestionData(answerNumber));
   };
 
   const startGame = () => {
     setupNewRound();
   };
 
-  const toggleGame = () => {
-    root.classList.toggle('game--show');
-  };
-
-  const goToScreen = (cb) => {
-    root.addEventListener('click', (e) => {
-      if (e.target === button.getButton()) {
-        root.classList.remove('game--show');
-        cb();
-      }
-    });
-  };
-
   root.addEventListener('click', (e) => {
     if ([...answers.getAnswers()].includes(e.target)) {
       const answerElement = e.target;
-      const answer = Number(answerElement.dataset.answer);
+      const answerNumber = answers.getAnswerNumber(answerElement);
 
-      checkAnswer(answer, answerElement);
+      verifyAnswer(answerNumber, answerElement);
     }
   });
 
   button.getButton().addEventListener('click', () => {
-    if (isGameOver) {
-      toggleGame();
-      result.setScore(points);
-      result.toggleResult();
-    }
-
     if (isRoundOver && !isGameOver) {
       round += 1;
       categories.toggleNextActive(round);
@@ -145,10 +135,19 @@ const makeGame = (query = '.game') => {
     }
   });
 
+  const goToResult = (cb) => {
+    button.getButton().addEventListener('click', () => {
+      if (isGameOver) {
+        cb();
+      }
+    });
+  };
+
   return {
-    showGame: toggleGame,
     startGame,
-    goToScreen,
+    goToResult,
+    getPoints,
+    checkIsWon,
   };
 };
 

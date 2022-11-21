@@ -2,7 +2,7 @@ const makeWelcome = (query = '.welcome') => {
   const root = document.querySelector(query);
   const startButton = root.querySelector('.welcome__button');
 
-  const goToScreen = (cb) => {
+  const goToGame = (cb) => {
     root.addEventListener('click', (e) => {
       if (e.target === startButton) {
         root.classList.remove('welcome--show');
@@ -12,7 +12,7 @@ const makeWelcome = (query = '.welcome') => {
   };
 
   return {
-    goToScreen,
+    goToGame,
   };
 };
 

@@ -11,11 +11,11 @@
         <p class="header__logo title title--sm">
           VGM Quiz
         </p>
-        <div class="header__score score">score: 9999</div>
         <nav class="header__nav">
           <ul class="nav">
-            <li class="nav__item">Home</li>
-            <li class="nav__item nav__item--game">Game</li>
+            <li class="nav__item nav__item--welcome">Home</li>
+            <li class="nav__item nav__item--game nav__item--is-disabled">Game
+            </li>
             <li class="nav__item nav__item--result nav__item--is-disabled">
               Result
             </li>
@@ -27,7 +27,7 @@
       </div>
     </header>
     <main>
-      <section class="welcome welcome--show container">
+      <section class="screen screen--welcome screen--current welcome container">
         <h1 class="welcome__title title">VGM QUIZ</h1>
         <p class="welcome__desc">It's a video game music quiz!</p>
         <p class="welcome__desc">
@@ -38,7 +38,7 @@
           Start
         </button>
       </section>
-      <section class="game container">
+      <section class="screen screen--game game container">
         <p class="game__score score">Score:
           <span class="score__value">0</span>
         </p>
@@ -59,12 +59,12 @@
                  src=""></audio>
         </div>
         <ul class="game__answers answers">
-          <li class="answers__item" data-answer="1">1</li>
-          <li class="answers__item" data-answer="2">2</li>
-          <li class="answers__item" data-answer="3">3</li>
-          <li class="answers__item" data-answer="4">4</li>
-          <li class="answers__item" data-answer="5">5</li>
-          <li class="answers__item" data-answer="6">6</li>
+          <li class="answers__item" data-answer="1" data-checked>1</li>
+          <li class="answers__item" data-answer="2" data-checked>2</li>
+          <li class="answers__item" data-answer="3" data-checked>3</li>
+          <li class="answers__item" data-answer="4" data-checked>4</li>
+          <li class="answers__item" data-answer="5" data-checked>5</li>
+          <li class="answers__item" data-answer="6" data-checked>6</li>
         </ul>
         <div class="game__song-description song song--full">
           <img src="/src/icons/question.png" alt="Cover" class="song__cover">
@@ -81,7 +81,7 @@
           NextLevel
         </button>
       </section>
-      <section class="result container">
+      <section class="screen screen--result result container">
         <div class="result__score score score--is-final">
           Your result is
           <span class="score__value">999</span>

@@ -1,14 +1,12 @@
 .welcome {
+  --page-display: flex;
+
   display: none;
   height: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 2rem;
-
-  &--show {
-    display: flex;
-  }
 }
 
 .welcome__desc {

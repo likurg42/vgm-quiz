@@ -8,12 +8,7 @@ const makeResult = (query = '.result', parentElement = document) => {
     score.setValue(points);
   };
 
-  const toggleResult = () => {
-    root.classList.toggle('result--show');
-  };
-
   return {
-    toggleResult,
     setScore,
   };
 };
