@@ -1,4 +1,3 @@
-import data from './data/data';
 import makeWelcome from './components/welcome';
 import makeGame from './components/game';
 import makeHeader from './components/header';
@@ -16,6 +15,12 @@ const init = () => {
 
   nav.bindGoToWelcome(screen.goToWelcome);
 
+  result.bindGoToHome(screen.goToWelcome);
+  result.bindGoToNewGame(() => {
+    game.setupNewGame();
+    screen.goToGame();
+  });
+
   screen.goToWelcome();
 
   header.goToWelcome(() => {
@@ -25,12 +30,12 @@ const init = () => {
   welcome.goToGame(() => {
     nav.bindGoToGame(screen.goToGame);
     screen.goToGame();
-    game.startGame(data);
+    game.setupNewGame();
   });
 
   game.goToResult(() => {
     nav.bindGoToResult(screen.goToResult);
-    result.setScore(game.getPoints());
+    result.setScore(game.getPoints(), game.checkIsWon());
     screen.goToResult();
   });
 };

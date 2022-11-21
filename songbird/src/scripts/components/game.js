@@ -85,6 +85,16 @@ const makeGame = (query = '.game') => {
     setupDescription();
   };
 
+  const setupNewGame = () => {
+    isGameOver = false;
+    isRoundOver = false;
+    points = 0;
+    round = 1;
+    correctAnswer = 0;
+    score.setValue(points);
+    setupNewRound();
+  };
+
   const verifyAnswer = (answerNumber, answerElement) => {
     const isChecked = answers.checkIsChecked(answerElement);
     console.log(isChecked);
@@ -114,10 +124,6 @@ const makeGame = (query = '.game') => {
     songDescription.setData(getQuestionData(answerNumber));
   };
 
-  const startGame = () => {
-    setupNewRound();
-  };
-
   root.addEventListener('click', (e) => {
     if ([...answers.getAnswers()].includes(e.target)) {
       const answerElement = e.target;
@@ -144,7 +150,7 @@ const makeGame = (query = '.game') => {
   };
 
   return {
-    startGame,
+    setupNewGame,
     goToResult,
     getPoints,
     checkIsWon,
