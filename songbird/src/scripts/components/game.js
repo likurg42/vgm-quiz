@@ -101,6 +101,7 @@ const makeGame = (query = '.game') => {
     correctAnswer = 0;
     score.setValue(points);
     categories.reset();
+    button.changeText('Next Round');
     setupNewRound();
   };
 
