@@ -87,6 +87,11 @@ const makeGame = (query = '.game') => {
   const setupNewRound = () => {
     isRoundOver = false;
 
+    window.scrollTo({
+      left: 0,
+      top: score.getElement().getBoundingClientRect().top - 10,
+      behavior: 'smooth',
+    });
     button.toggleDisable();
     setupAnswers();
     setupQuestion();

@@ -6,8 +6,11 @@ const makeScore = (query = '.score', parentElement = document) => {
     value.textContent = points;
   };
 
+  const getElement = () => root;
+
   return {
     setValue,
+    getElement,
   };
 };
 
