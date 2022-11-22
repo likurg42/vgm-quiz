@@ -1,6 +1,7 @@
 .game {
   --page-display: grid;
 
+  position: relative;
   display: none; // display: grid;
   padding-top: var(--spacer-400);
   padding-bottom: var(--spacer-400);
@@ -16,6 +17,7 @@
     "button";
   gap: var(--spacer-500);
   align-items: start;
+  overflow: hidden;
 
   @media (min-width: 700px) {
     grid-template-columns: 1fr 1fr;
@@ -28,9 +30,17 @@
   }
 }
 
+.game__video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
 .game__score {
   grid-area: score;
   justify-self: end;
+  color: var(--clr-default)
 }
 
 .game__categories {

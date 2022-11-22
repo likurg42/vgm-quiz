@@ -8,6 +8,8 @@ const makeSong = (query = '.song', parentElement = document) => {
   const cover = root.querySelector('.song__cover');
   const description = root.querySelector('.song__description');
 
+  const getPlayer = () => player;
+
   const toggleDescription = () => {
     description.classList.toggle('song__description--show');
   };
@@ -56,6 +58,7 @@ const makeSong = (query = '.song', parentElement = document) => {
     reset,
     toggleDescription,
     pauseAudio,
+    getPlayer,
   };
 };
 

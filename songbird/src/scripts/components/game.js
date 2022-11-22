@@ -15,6 +15,7 @@ const makeGame = (query = '.game') => {
   const score = makeScore('.game__score');
   const songQuestion = makeSong('.game__song-question', root);
   const songDescription = makeSong('.game__song-description', root);
+  const videoBackground = root.querySelector('.game__video-background');
   const correctSound = new Audio(correctSoundSrc);
   const wrongSound = new Audio(wrongSoundSrc);
 
@@ -40,6 +41,14 @@ const makeGame = (query = '.game') => {
 
   categories.setCategories(dataCategories);
 
+  songQuestion.getPlayer().addEventListener('play', () => {
+    videoBackground.play();
+  });
+
+  songQuestion.getPlayer().addEventListener('pause', () => {
+    videoBackground.pause();
+  });
+
   const getPoints = () => points;
 
   const checkIsWon = () => points === maxPoints;
@@ -62,6 +71,7 @@ const makeGame = (query = '.game') => {
   };
 
   const setupAnswers = () => {
+    videoBackground.pause();
     correctAnswer = Math.floor(Math.random() * maxRound + 1);
     answers.cleanAnswers();
 
