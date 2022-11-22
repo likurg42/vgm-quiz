@@ -41,7 +41,6 @@
   }
 
   &--with-border {
-    object-fit: cover;
     border-image: url('/src/icons/border.svg') 2 / 10px / 9px stretch;
   }
 }
