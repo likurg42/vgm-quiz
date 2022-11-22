@@ -100,10 +100,11 @@ const makeGame = (query = '.game') => {
     round = 1;
     correctAnswer = 0;
     score.setValue(points);
+    categories.reset();
     setupNewRound();
   };
 
-  const verifyAnswer = (answerNumber, answerElement) => {
+  const verifyAnswer = async (answerNumber, answerElement) => {
     const isChecked = answers.checkIsChecked(answerElement);
     if (answerNumber === correctAnswer && !isRoundOver && !isChecked) {
       answers.checkAnswer(answerElement);
@@ -111,9 +112,9 @@ const makeGame = (query = '.game') => {
       score.setValue(points);
       answers.toggleCorrectAnswer(answerElement);
       button.toggleActive();
-      songQuestion.setData(getQuestionData(answerNumber));
+      songQuestion.setData({ ...getQuestionData(answerNumber), audioSrc: '' });
       songDescription.setData(getQuestionData(answerNumber));
-      correctSound.play();
+      await correctSound.play();
 
       isRoundOver = true;
     }
@@ -122,7 +123,7 @@ const makeGame = (query = '.game') => {
       answers.checkAnswer(answerElement);
       points -= 10;
       answers.toggleWrongAnswer(answerElement);
-      wrongSound.play();
+      await wrongSound.play();
     }
 
     if (round === maxRound) {

@@ -23,7 +23,13 @@ const makeSong = (query = '.song', parentElement = document) => {
   ) => {
     gameTitle.textContent = gameTitleText;
     songTitle.textContent = songTitleText;
-    player.src = audioSrc;
+
+    if (audioSrc === '') {
+      player.pause();
+    } else {
+      player.src = audioSrc;
+    }
+
     cover.src = coverSrc;
     cover.classList.add('song__cover--with-border');
     cover.classList.remove('song__cover--question');
@@ -41,10 +47,15 @@ const makeSong = (query = '.song', parentElement = document) => {
     if (description) description.textContent = 'Choose answer';
   };
 
+  const pauseAudio = () => {
+    player.pause();
+  };
+
   return {
     setData,
     reset,
     toggleDescription,
+    pauseAudio,
   };
 };
 
