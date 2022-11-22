@@ -11,6 +11,7 @@
   padding: var(--spacer-400);
   color: var(--answers-item-color, initial);
   background-color: var(--answers-item-bg, var(--clr-default));
+  cursor: pointer;
 
   & + & {
     border-top: 2px solid var(--clr-accent);
