@@ -286,8 +286,8 @@ const data = [
     },
     {
       id: 5,
-      gameTitle: 'Oakvale',
-      songTitle: 'Fable',
+      gameTitle: 'Fable',
+      songTitle: 'Oakvale',
       description: 'In Fable, the players\' every action determines their character\'s skills, appearances and moralities. Life stories are created from childhood through adulthood and on to old age. Players may choose the paths of righteousness or dedicate their characters\' lives to evil; observing as they transform into reflections of their actions and decisions. As players\' characters develop, the world reacts to them and their actions. People comment on their successes, failures, appearances and behaviors. Their many opinions are expressed through applause, mockery, trepidation, panic and even flirtation. With each person characters aid and every creature they slay, the world is changed forever. In Fable, gamers decide: "Who will I be?"\n',
       image: 'quiz-data/6-xbox/oakvale-fable.png',
       audio: 'quiz-data/6-xbox/oakvale-fable.mp3',
