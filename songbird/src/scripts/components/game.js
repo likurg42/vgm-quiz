@@ -19,7 +19,7 @@ const makeGame = (query = '.game') => {
   const wrongSound = new Audio(wrongSoundSrc);
 
   const maxRound = data.length;
-  const maxPoints = data.length * 50;
+  const maxPoints = data.length * 5;
   let points = 0;
   let round = 1;
   let correctAnswer = 0;
@@ -114,7 +114,7 @@ const makeGame = (query = '.game') => {
     const isChecked = answers.checkIsChecked(answerElement);
     if (answerNumber === correctAnswer && !isRoundOver && !isChecked) {
       answers.checkAnswer(answerElement);
-      points += 50;
+      points += 5;
       score.setValue(points);
       answers.toggleCorrectAnswer(answerElement);
       button.toggleActive();
@@ -127,7 +127,7 @@ const makeGame = (query = '.game') => {
 
     if (answerNumber !== correctAnswer && !isRoundOver && !isChecked) {
       answers.checkAnswer(answerElement);
-      points -= 10;
+      points -= 1;
       answers.toggleWrongAnswer(answerElement);
       await wrongSound.play();
     }
