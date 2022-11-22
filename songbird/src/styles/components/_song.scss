@@ -35,6 +35,7 @@
   height: 150px;
   grid-area: cover;
   border: 1px solid transparent;
+  object-fit: contain;
 
   &--question {
     object-fit: contain;
