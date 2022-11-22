@@ -12,7 +12,6 @@ const makeAnswers = (query = '.answers', parentElement = document) => {
   };
 
   const getAnswerNumber = (answerElement) => {
-    console.log(answerElement);
     const answerNumber = Number(answerElement.dataset.answer);
     return answerNumber;
   };

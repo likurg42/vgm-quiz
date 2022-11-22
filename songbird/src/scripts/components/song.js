@@ -2,7 +2,8 @@ import questionMark from '../../icons/question.png';
 
 const makeSong = (query = '.song', parentElement = document) => {
   const root = parentElement.querySelector(query);
-  const title = root.querySelector('.song__title');
+  const gameTitle = root.querySelector('.song__game-title');
+  const songTitle = root.querySelector('.song__song-title');
   const player = root.querySelector('.song__player');
   const cover = root.querySelector('.song__cover');
   const description = root.querySelector('.song__description');
@@ -13,13 +14,15 @@ const makeSong = (query = '.song', parentElement = document) => {
 
   const setData = (
     {
-      titleText,
+      songTitleText,
+      gameTitleText,
       descriptionText,
       audioSrc,
       coverSrc,
     },
   ) => {
-    title.textContent = titleText;
+    gameTitle.textContent = gameTitleText;
+    songTitle.textContent = songTitleText;
     player.src = audioSrc;
     cover.src = coverSrc;
     cover.classList.add('song__cover--with-border');
@@ -29,7 +32,8 @@ const makeSong = (query = '.song', parentElement = document) => {
   };
 
   const reset = (audioSrc) => {
-    title.textContent = '???';
+    gameTitle.textContent = '???';
+    songTitle.textContent = '';
     cover.src = questionMark;
     cover.classList.add('song__cover--question');
     cover.classList.remove('song__cover--with-border');

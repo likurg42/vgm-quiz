@@ -46,13 +46,15 @@ const makeGame = (query = '.game') => {
 
   const getQuestionData = (answer) => {
     const {
-      name,
+      gameTitle,
+      songTitle,
       description,
       audio,
       image,
     } = data[round - 1][answer - 1];
     return {
-      titleText: name,
+      gameTitleText: gameTitle,
+      songTitleText: songTitle,
       descriptionText: description,
       audioSrc: audio,
       coverSrc: image,
@@ -61,11 +63,10 @@ const makeGame = (query = '.game') => {
 
   const setupAnswers = () => {
     correctAnswer = Math.floor(Math.random() * maxRound + 1);
-    console.log(correctAnswer);
     answers.cleanAnswers();
 
     const currentAnswers = data[round - 1].reduce((acc, item) => {
-      acc.push(item.name);
+      acc.push(item.gameTitle);
       return acc;
     }, []);
 
@@ -104,7 +105,6 @@ const makeGame = (query = '.game') => {
 
   const verifyAnswer = (answerNumber, answerElement) => {
     const isChecked = answers.checkIsChecked(answerElement);
-    console.log(isChecked);
     if (answerNumber === correctAnswer && !isRoundOver && !isChecked) {
       answers.checkAnswer(answerElement);
       points += 50;
