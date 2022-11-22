@@ -42,8 +42,8 @@ const data = [
     },
     {
       id: 6,
-      gameTitle: 'Tristram',
-      songTitle: 'Diablo',
+      gameTitle: 'Diablo',
+      songTitle: 'Tristram',
       description: 'Diablo is an isometric strategy RPG and one of the most well-known examples of the action-RPG subgenre. Although some of the game mechanics resemble a typical RPG, all actions are done in real-time just like in an action game. The player have to kill hordes of monsters through randomized dungeon levels in order to gain experience points, gold and a variety of equipment to bolster the hero\'s monster-killing potency.\n',
       image: 'quiz-data/1-practice/tristram-diablo.png',
       audio: 'quiz-data/1-practice/tristram-diablo.mp3',
