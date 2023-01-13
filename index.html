@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>VGM Quiz</title>
+    <script type="module" crossorigin src="/vgm-quiz/assets/index.edc610c1.js"></script>
+    <link rel="stylesheet" href="/vgm-quiz/assets/index.2e93d9d3.css">
+  </head>
+  <body class="full-height">
+    <header class="header">
+      <div class="header__content container">
+        <p class="header__logo title title--sm">
+          VGM Quiz
+        </p>
+        <nav class="header__nav">
+          <ul class="nav">
+            <li class="nav__item nav__item--welcome">Home</li>
+            <li class="nav__item nav__item--game nav__item--is-disabled">Game
+            </li>
+            <li class="nav__item nav__item--result nav__item--is-disabled">
+              Result
+            </li>
+            <li class="nav__item nav__item--jukebox nav__item--is-disabled">
+              Jukebox
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="screen screen--welcome screen--current welcome container">
+        <h1 class="welcome__title title">VGM QUIZ</h1>
+        <p class="welcome__desc">It's a video game music quiz!</p>
+        <p class="welcome__desc">
+          It's dangerous to go alone, take this
+          <span class="welcome__sword sword"></span>
+        </p>
+        <button class="welcome__button button button--is-primary" type="button">
+          Start
+        </button>
+      </section>
+      <section class="screen screen--game game container">
+        <video autoplay muted loop playsinline class="game__video-background">
+          <source src="/vgm-quiz/assets/output.533896bc.mp4">
+        </video>
+        <p class="game__score score">Score:
+          <span class="score__value">0</span>
+        </p>
+        <ul class="game__categories categories">
+          <li class="categories__item categories__item--is-current">Practice
+          </li>
+          <li class="categories__item">???</li>
+          <li class="categories__item">???</li>
+          <li class="categories__item">???</li>
+          <li class="categories__item">???</li>
+          <li class="categories__item">???</li>
+        </ul>
+        <div class="game__song-question song">
+          <img src="data:image/png;base64,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" alt="Cover" class="song__cover">
+          <h3 class="song__game-title">???</h3>
+          <p class="song__song-title"></p>
+          <audio class="song__player"
+                 controls
+                 src=""></audio>
+        </div>
+        <ul class="game__answers answers">
+          <li class="answers__item" data-answer="1" data-checked>1</li>
+          <li class="answers__item" data-answer="2" data-checked>2</li>
+          <li class="answers__item" data-answer="3" data-checked>3</li>
+          <li class="answers__item" data-answer="4" data-checked>4</li>
+          <li class="answers__item" data-answer="5" data-checked>5</li>
+          <li class="answers__item" data-answer="6" data-checked>6</li>
+        </ul>
+        <div class="game__song-description song song--full">
+          <img src="data:image/png;base64,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" alt="Cover"
+               class="song__cover">
+          <h3 class="song__game-title">???</h3>
+          <p class="song__song-title"></p>
+          <audio class="song__player"
+                 controls
+                 src="https://vgmsite.com/soundtracks/super-mario-bros/jlgsgtpeof/01%20Running%20About.mp3"></audio>
+          <p class="song__description song__description--show">
+            Choose answer
+          </p>
+        </div>
+        <button class="game__continue-button button"
+                disabled>
+          Next level
+        </button>
+      </section>
+      <section class="screen screen--result result container">
+        <p class="result__score score score--is-final">
+          Your result is
+          <span class="score__value">999</span>
+        </p>
+        <p class="result__congratulations">
+          Congratulations, your Won!
+          <span>🎂</span>
+        </p>
+        <div class="result__buttons-wrapper">
+          <button class="result__new-game-btn button button--is-primary">
+            New game
+          </button>
+          <button class="result__home-btn button">
+            Home
+          </button>
+        </div>
+      </section>
+    </main>
+    <footer class="footer container">
+      <a class="footer__item footer__item--link" href="https://rs.school/js/"
+         target="_blank">
+        RS School
+      </a>
+      <a href="https://github.com/likurg42"
+         class="footer__item footer__item--link"
+         target="_blank">
+        My Github
+      </a>
+      <p class="footer__item">2022</p>
+    </footer>
+    
+  </body>
+</html>
