@@ -1,4 +1,4 @@
-# «Video game Music quiz»
+# «Video games Music quiz»
 
 [![VGM Logo](./readme/logo.png)](https://likurg42.github.io/vgm-quiz/)
 
